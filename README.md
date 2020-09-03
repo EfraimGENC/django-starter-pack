@@ -6,7 +6,7 @@ Project Name: `mysite`
 Virtual Enviorment Name: `myvenv`
 App Name: `myapp`
 
-### Let's Start
+## Let's Start
 `$ mkdir mysite`
 
 `$ cd mysite`
