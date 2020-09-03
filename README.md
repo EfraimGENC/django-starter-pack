@@ -1,11 +1,12 @@
 # Django Starter Pack
 It's for fast start to new django project.
 
-> Project Name: **mysite**
-> Virtual Enviorment Name: **myvenv**
-> App Name: **myapp**
-
 ## Let's Start
+
+> Project Name: **mysite**
+Virtual Enviorment Name: **myvenv**
+App Name: **myapp**
+
 `$ mkdir mysite`
 
 `$ cd mysite`
