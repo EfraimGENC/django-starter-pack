@@ -5,6 +5,8 @@ from decimal import Decimal
 from django.dispatch import receiver
 import os
 import shutil
+from django.utils.translation import ugettext_lazy as _
+
 
 from phonenumber_field.modelfields import PhoneNumberField
 from imagekit.models import ProcessedImageField
@@ -12,29 +14,29 @@ from imagekit.processors import ResizeToFill, ResizeToFit
 
 class MyModelName(models.Model):
 
-    name = models.CharField(max_length=150)
+    name = models.CharField(_('Name'), max_length=150)
     slug = models.SlugField(editable=False)
     status = models.BooleanField()
     order = models.PositiveSmallIntegerField(default=0)
 
-    stock = models.IntegerField(default=0, verbose_name='Stok Adedi')
-    price = models.DecimalField("Adet/Miktar", validators=[MinValueValidator(Decimal('0.01'))], max_digits=6, decimal_places=2, default=1)
+    stock = models.IntegerField(default=0, verbose_name=_('Stock'))
+    price = models.DecimalField(_('Price'), validators=[MinValueValidator(Decimal('0.01'))], max_digits=6, decimal_places=2, default=1)
 
     image_unprocessed = models.ImageField(upload_to = "product")
     image = ProcessedImageField(upload_to='images', processors=[ResizeToFit(1000, 1000)], format='JPEG', options={'quality': 75})
     image_medium = ImageSpecField(source='image', processors=[ResizeToFit(600, 900)], format='JPEG', options={'quality': 75})
     image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(84, 84)], format='JPEG', options={'quality': 75})
 
-    phone = PhoneNumberField("Telefon", unique=True)
-    gender = models.CharField('Gender', max_length=15, choices=[('m', 'Male'),('f', 'Female')], blank=True, null=True)
-    birthday = models.DateField("Birthday", null=True, blank=True)
+    phone = PhoneNumberField(_('Phone'), unique=True)
+    gender = models.CharField(_('Gender'), max_length=15, choices=[('m', 'Male'),('f', 'Female')], blank=True, null=True)
+    birthday = models.DateField(_('Birthday'), null=True, blank=True)
 
-    created_date = models.DateTimeField("Added", auto_now_add=True)
-    last_update = models.DateTimeField("Last Update", auto_now=True)
+    created_date = models.DateTimeField(_('Added'), auto_now_add=True)
+    last_update = models.DateTimeField(_('Last Update'), auto_now=True)
 
     class Meta:
-        verbose_name = "MyModelName"
-        verbose_name_plural = "MyModelNames"
+        verbose_name = _('MyModelName')
+        verbose_name_plural = _('MyModelNames')
 
     def __str__(self):
         return self.name

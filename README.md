@@ -7,7 +7,9 @@ It's for fast start to new django project.
 Virtual Enviorment Name: **myvenv**
 App Name: **myapp**
 
-`$ mkdir mysite`
+```bash
+$ mkdir mysite
+```
 
 `$ cd mysite`
 
@@ -30,3 +32,11 @@ App Name: **myapp**
 `$ python3 manage.py migrate`
 
 `$ python manage.py createsuperuser`
+
+> Multi Language Shell Commands:
+https://docs.djangoproject.com/en/3.1/ref/django-admin/#makemessages
+`django-admin.py makemessages --all` #for all lang
+`django-admin.py makemessages -l en` #for one lang only
+
+https://docs.djangoproject.com/en/3.1/ref/django-admin/#django-admin-compilemessages
+`django-admin compilemessages` #Compiles .po files created by makemessages to .mo files for use with the built-in gettext support.
