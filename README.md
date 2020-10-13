@@ -9,29 +9,29 @@ App Name: **myapp**
 
 ```bash
 $ mkdir mysite
+
+$ cd mysite
+
+$ python3 -m venv myvenv
+
+$ source myvenv/bin/activate
+
+$ python3 -m pip install --upgrade pip
+
+$ django-admin startproject mysite .
+
+$ python3 manage.py startapp myapp
+
+$ python3 manage.py migrate
 ```
+add app to INSTALLED_APPS in setttings.py
+```bash
+$ python3 manage.py makemigrations
 
-`$ cd mysite`
+$ python3 manage.py migrate
 
-`$ python3 -m venv myvenv`
-
-`$ source myvenv/bin/activate`
-
-`$ python3 -m pip install --upgrade pip`
-
-`$ django-admin startproject mysite .`
-
-`$ python3 manage.py startapp myapp`
-
-`$ python3 manage.py migrate`
-
-`add app to INSTALLED_APPS in setttings.py`
-
-`$ python3 manage.py makemigrations`
-
-`$ python3 manage.py migrate`
-
-`$ python manage.py createsuperuser`
+$ python manage.py createsuperuser
+```
 
 > Multi Language Shell Commands:
 https://docs.djangoproject.com/en/3.1/ref/django-admin/#makemessages
