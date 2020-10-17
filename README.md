@@ -18,11 +18,15 @@ $ source myvenv/bin/activate
 
 $ python3 -m pip install --upgrade pip
 
+$ pip3 install django
+
+$ django-admin --version # to check
+
 $ django-admin startproject mysite .
 
-$ python3 manage.py startapp myapp
-
 $ python3 manage.py migrate
+
+$ python3 manage.py startapp myapp
 ```
 **add app to INSTALLED_APPS in setttings.py**
 ```bash
@@ -31,6 +35,8 @@ $ python3 manage.py makemigrations
 $ python3 manage.py migrate
 
 $ python3 manage.py createsuperuser
+
+$ deactivate # To leave your virtual environment
 ```
 
 ### Multi Language Shell Commands:
